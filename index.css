@@ -1,0 +1,338 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Play",sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: var(--yellow-light);
+    text-shadow: 0px 2px 2px red;
+}
+img {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* 
+-------------------- Reusable Components 
+*/
+:root{
+    --yellow-light: hsla(53, 91%, 59%, 100%);
+    --yellow-medium: hsla(38, 75%, 51%, 100%);
+    --red-bright: hsla(0, 90%, 47%, 79%);
+}
+
+.hidden{
+    display: none !important;
+}
+
+.greyscale{
+    filter: grayscale(90%)
+}
+
+.btn {
+    font-family: "Impact";
+    width: 100%;
+    max-width: 250px;
+    background: linear-gradient(to right, var(--yellow-light), var(--yellow-medium));
+    border-radius: 6px;
+    border: none;
+    box-shadow: 0 5px 5px var(--red-bright);
+    color: red;
+    font-size: 48px;
+    padding: .5rem 1rem;
+}
+
+.btn:hover, 
+.btn:focus{
+    scale: 1.05;
+    cursor: pointer;
+    transition: 250ms;
+}
+
+.btn:active{
+    scale: 1;
+}
+
+.sound-toggle{
+    max-width: 100px;
+    font-size: .5em;
+    position: fixed;   
+    bottom: 0;
+    left: 50vw;
+    transform: translateX(-50%);
+    margin-block: 1rem;
+}
+
+.input-field{
+    width: 100%;
+    max-width: 250px;
+    font-size: 1.5rem;
+    padding: .5rem .75rem;
+    border-radius: 6px;
+    background-color: var(--yellow-light);
+    border: 4px solid black;
+    color: black;
+    font-weight: bold;
+    margin-top: .5rem;
+}
+
+.input-field::placeholder{
+    color: black;
+    opacity: .15;
+}
+
+/* Intro Section Styles */
+.intro-page-container{
+    background-image: url(./assets/fnaf-game-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.intro-page-contents{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.game-header-img{
+    width: 100%;
+    max-width: 520px;
+}
+
+.player-name{
+    text-align:left;
+}
+
+.play-game-btn{
+    margin-top: 3rem;
+}
+
+.dev-skip-btn{
+    margin-top: 3rem;
+    width: 50%;
+}
+
+/* Character Select Page Styles */
+.character-select-container{
+    background-image: url(./assets/fnaf-game-bg.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.character-select-contents{
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.character-select--current-player{
+    text-align: center;
+    font-size: 1.5em;
+    overflow: hidden;
+    padding-inline: .5rem;
+    margin-bottom: .75rem;
+}
+
+.character-select-header p{
+    font-size: 1.5rem;
+}
+
+.character-select-choices{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-block: 1.5rem;
+    gap: .85rem;
+}
+
+.character-select-choices *{
+    border-radius: 5px;
+} 
+
+.character-select-choices *:hover,
+.character-select-choices *:active {
+    cursor: pointer;
+    scale: 105%;
+}
+
+.character-select-freddy{
+    background-image: url(./assets/freddy-fazbear-banner-mobile.png);
+    background-size: cover;
+    height: 105px;
+    width: 90%;
+}
+
+.character-select-bonnie{
+    background-image: url(./assets/bonnie-the-bunny-banner-mobile.png);
+    background-size: cover;
+    height: 105px;
+    width: 90%;
+}
+
+.character-select-carl{
+    background-image: url(./assets/carl-the-cupcake-banner-mobile.png);
+    background-size: cover;
+    height: 105px;
+    width: 90%;
+}
+
+.character-select-chica{
+    background-image: url(./assets/chica-the-chicken-banner-mobile.png);
+    background-size: cover;
+    height: 105px;
+    width: 90%;
+}
+
+.character-selected{
+    outline: 7px solid red;
+}
+
+.confirm-character-btn{
+    padding-block: .45em;
+    font-size: 36px;
+}
+
+/* 
+ ------------- Game Board Styles 
+*/
+.game-board-container{
+    background-image: url(./assets/fnaf-game-bg-alt.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.game-board-contents{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 8px;
+    max-width: 428px;
+    width: 100%;
+    margin-block: 1.5rem;
+}
+
+.game-board--current-player{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.cell{
+    background-image: url('./assets/empty-tile-125x125.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: grey;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+}
+
+.temp-score{
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    padding: .5rem;
+}
+
+.play-again-btn{
+    margin-block: .75rem;
+}
+
+.end-game-btn{
+    color: var(--yellow-light);
+    background-image: linear-gradient(90deg, rgb(247, 87, 87), red)
+}
+
+/* 
+------------- Media Queries
+*/
+
+@media (min-width: 500px) {
+
+    .character-select-contents{
+        width: 100%;
+        max-width: 100%;
+        margin-top: 2.5rem;
+    }
+
+    .character-select--current-player{
+        font-size: 2em;
+    }
+
+    .character-select-choices{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-inline: auto;
+        max-width: 550px;
+        margin-block: 2rem;
+    }
+
+    .character-select-freddy{
+        background-image: url(./assets/freddy-fazbear-avatar.png);
+        height: 250px;
+        width: 250px;
+    }
+
+    .character-select-bonnie{
+        background-image: url(./assets/bonnie-the-bunny-avatar.png);
+        height: 250px;
+        width: 250px;
+    }
+
+    .character-select-carl{
+        background-image: url(./assets/carl-the-cupcake-avatar.png);
+
+        height: 250px;
+        width: 250px;
+    }
+
+    .character-select-chica{
+        background-image: url(./assets/chica-the-chicken-avatar.png);
+
+        height: 250px;
+        width: 250px;
+    }
+
+    .game-board-contents{
+        margin-top: 2.5rem;
+    }
+
+    .game-board--current-player{
+        font-size: 1.5em;
+    }
+
+}

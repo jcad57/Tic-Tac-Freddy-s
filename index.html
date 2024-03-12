@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Slackside+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tic Tac Freddy</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Intro Page -->
+      <div class="intro-page-container">
+        <div class="intro-page-contents">
+          <img
+            class="game-header-img"
+            src="./assets/TIC-TAC-FREDDY-S-3-5-2024.png"
+          />
+          <p class="player-name">Player 1:</p>
+          <input
+            type="text"
+            class="input-field player-1-name"
+            placeholder="Enter your name"
+          />
+          <p class="player-name">Player 2:</p>
+          <input
+            type="text"
+            class="input-field player-2-name"
+            placeholder="Enter your name"
+          />
+          <button class="btn play-game-btn">PLAY GAME</button>
+        </div>
+      </div>
+
+      <!-- Character Select Screen -->
+      <div class="character-select-container hidden">
+        <div class="character-select-contents">
+          <div class="character-select-header">
+            <h2 class="character-select--current-player"></h2>
+            <p class="character-select-message">SELECT YOUR CHARACTER</p>
+          </div>
+          <div class="character-select-choices">
+            <div class="character character-select-freddy" data-char="freddy">
+              FREDDY FAZBEAR
+            </div>
+            <div class="character character-select-bonnie" data-char="bonnie">
+              BONNIE THE BUNNY
+            </div>
+            <div class="character character-select-carl" data-char="carl">
+              CARL THE CUPCAKE
+            </div>
+            <div class="character character-select-chica" data-char="chica">
+              CHICA THE CHICKEN
+            </div>
+          </div>
+          <button class="btn confirm-character-btn">CONFIRM</button>
+        </div>
+      </div>
+
+      <!-- Game Board -->
+      <div class="game-board-container hidden">
+        <div class="game-board-contents">
+          <h2 class="game-board--current-player">PLAYER 1'S TURN</h2>
+          <div class="grid-container">
+            <div id="0" class="cell"></div>
+            <div id="1" class="cell"></div>
+            <div id="2" class="cell"></div>
+            <div id="3" class="cell"></div>
+            <div id="4" class="cell"></div>
+            <div id="5" class="cell"></div>
+            <div id="6" class="cell"></div>
+            <div id="7" class="cell"></div>
+            <div id="8" class="cell"></div>
+          </div>
+        </div>
+        <div class="temp-score">
+          <h3>SCOREBOARD:</h3>
+          <p class="player-1-wins"></p>
+          <p class="player-2-wins"></p>
+        </div>
+        <button class="btn play-again-btn">PLAY AGAIN</button>
+        <button class="btn end-game-btn">END GAME</button>
+      </div>
+      <button class="btn sound-toggle">SOUND OFF</button>
+      <!-- End -->
+    </div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
