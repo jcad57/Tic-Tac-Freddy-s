@@ -141,7 +141,7 @@ const click2 = new Audio("./assets/click2.wav");
 const winGame = new Audio("./assets/wingame.wav");
 
 // Start BG music
-bgmusic.play();
+if (soundOn) bgmusic.play();
 
 // Set volume
 bgmusic.volume = 0.25;
