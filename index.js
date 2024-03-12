@@ -134,17 +134,17 @@ const allWinningCombos = [
 ];
 
 // Sounds
-let soundOn = true;
+let soundOn = false;
 const bgmusic = new Audio("./assets/fnaftheme.mp3");
 const click1 = new Audio("./assets/click1.wav");
 const click2 = new Audio("./assets/click2.wav");
 const winGame = new Audio("./assets/wingame.wav");
 
 // Start BG music
-if (soundOn) bgmusic.play();
+bgmusic.play();
 
 // Set volume
-bgmusic.volume = 0.25;
+bgmusic.volume = 0.15;
 click1.volume = 0.5;
 click2.volume = 0.5;
 winGame.volume = 0.1;
@@ -234,7 +234,7 @@ function checkForWin(currentPlayerCells) {
     }
   } else {
     isPlaying = false;
-    winGame.play();
+    if (soundOn) winGame.play();
     if (currentPlayer === 0) {
       player0.wins += 1;
       currentPlayerElement.textContent = `${player0.name}, You win!`;
@@ -292,8 +292,8 @@ soundToggleBtn.addEventListener("click", function () {
   if (soundOn === false) bgmusic.pause();
   else bgmusic.play();
 
-  if (soundOn) soundToggleBtn.textContent = "SOUND OFF";
-  else soundToggleBtn.textContent = "SOUND ON";
+  if (soundOn) soundToggleBtn.textContent = "TURN SOUND OFF";
+  else soundToggleBtn.textContent = "TURN SOUND ON";
   console.log(soundOn);
 });
 
