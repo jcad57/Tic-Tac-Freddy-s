@@ -228,8 +228,8 @@ function checkForWin(currentPlayerCells) {
   if (!hasWon) {
     if (availableCells === 0) {
       isPlaying = false;
-      console.log(isPlaying);
     } else {
+      availableCells--;
       switchPlayerTurn();
     }
   } else {
@@ -451,7 +451,6 @@ cellElement.forEach((cell) => {
           checkForWin(player1.cells);
         }
         cellData[cell.id] = true;
-        availableCells--;
         // if no more available moves, end game
         if (availableCells <= 0) {
           playAgainBtn.classList.remove("hidden");
