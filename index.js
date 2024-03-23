@@ -82,6 +82,7 @@ const playAgainBtn = document.querySelector(".play-again-btn");
 const endGameBtn = document.querySelector(".end-game-btn");
 
 const soundToggleBtn = document.querySelector(".sound-toggle");
+const soundToggleIcon = document.querySelector(".sound-icon");
 
 /////////////////////////////
 // Set up variables
@@ -289,11 +290,12 @@ function fullReset() {
 ///////////////////////
 soundToggleBtn.addEventListener("click", function () {
   soundOn = !soundOn;
-  if (soundOn === false) bgmusic.pause();
-  else bgmusic.play();
+  if (soundOn === false) {
+    bgmusic.pause();
+  } else bgmusic.play();
 
-  if (soundOn) soundToggleBtn.textContent = "TURN SOUND OFF";
-  else soundToggleBtn.textContent = "TURN SOUND ON";
+  if (soundOn) soundToggleIcon.src = "./assets/sound-on-icon.png";
+  else soundToggleIcon.src = "./assets/sound-off-icon.png";
   console.log(soundOn);
 });
 
